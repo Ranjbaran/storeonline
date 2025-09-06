@@ -31,7 +31,6 @@ export function StoreContextProvider({ children }: TstorecontexProps) {
   const handelIncreaseProduct=(id:number)=> {
  
     setCartItem((previous) => {
-            
       const isNotExist = previous.find((item) => item.id == id);
       if (!isNotExist) 
         return [...previous, { id: id, count: 1 }];
