@@ -6,7 +6,7 @@ interface DetailsProductProps {
 }
 async function DetailsProduct(props: DetailsProductProps) {
   const { id } = await props.params;
-  const result = await fetch(`http://localhost:3002/products/${id}`);
+  const result = await fetch(`http://localhost:3005/products/${id}`);
   const product = (await result.json()) as IProduct;
   return (
     <>

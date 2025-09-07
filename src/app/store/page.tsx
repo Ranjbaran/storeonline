@@ -10,7 +10,7 @@ export interface IProduct {
   tags: string[];
 }
 async function Store() {
-  const result = await fetch("http://localhost:3002/products");
+  const result = await fetch("http://localhost:3005/products");
   const data = (await result.json()) as IProduct[];
   return (
     <>

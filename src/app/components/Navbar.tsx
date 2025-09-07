@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
+import { useStorecontext } from "../context/StoreContext";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -12,13 +13,14 @@ export default function Navbar() {
     { href: "/create-blogs", label: "ایجاد محصول جدید" },
     { href: "/aboutUs", label: "درباره ما" },
   ];
+  const { handelTotalCartItem } = useStorecontext();
 
   return (
     <nav className="w-full bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* لوگو */}
         <Link href="/" className="text-2xl font-bold text-blue-600">
-         <Logo/>
+          <Logo />
         </Link>
 
         {/* لینک‌ها */}
@@ -27,11 +29,10 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`relative px-2 py-1 transition ${
-                  pathname === link.href
+                className={`relative px-2 py-1 transition ${pathname === link.href
                     ? "text-blue-600 font-semibold"
                     : "text-gray-600 hover:text-blue-600"
-                }`}
+                  }`}
               >
                 {link.label}
                 {pathname === link.href && (
@@ -39,13 +40,17 @@ export default function Navbar() {
                 )}
               </Link>
             </li>
-        
+
           ))}
-              <Link href="/cart">
-              <li>
-                🛒
-              </li>
-            </Link>
+          <Link href="/cart">
+            <li className="relative px-2 py-1 transition text-gray-600 hover:text-blue-600 rounded-lg">
+              🛒
+              <span className="absolute -top-1 -right-1 bg-red-400 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                {handelTotalCartItem()}
+              </span>
+            </li>
+          </Link>
+
         </ul>
 
         {/* دکمه موبایل */}
