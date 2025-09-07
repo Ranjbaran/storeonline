@@ -18,6 +18,7 @@ type Tstorecontext = {
   handelDecreaseProduct:(id:number)=>void//تابعی که بتونه یه محصول رو از سبد کم کنه یا تعدادش رو کم کنه
   handelCountCartItem:(id:number)=>number//تابعی که تعداد یک محصول رو برگردونه
   handelTotalCartItem:()=>number//تابعی که تعداد کل محصولات سبد خرید رو برگردونه
+  removeItem:(id:number)=>void//تابعی که یک محصول رو از سبد حذف کنه
 };
 const storecontext = createContext({} as Tstorecontext);
 
@@ -61,7 +62,6 @@ export function StoreContextProvider({ children }: TstorecontexProps) {
     });
   };
 
-
   const handelDecreaseProduct=(id:number)=> {
  
     setCartItem((previous) => {
@@ -87,8 +87,14 @@ export function StoreContextProvider({ children }: TstorecontexProps) {
     });
   };
 
+ const removeItem=(id:number)=>{
+    setCartItem((previous) => {
+      return previous.filter(item=>item.id !=id);
+    });
+  }
+
   return (
-    <storecontext.Provider value={{ CartItems ,handelIncreaseProduct,handelDecreaseProduct,handelCountCartItem,handelTotalCartItem}}>
+    <storecontext.Provider value={{ CartItems ,handelIncreaseProduct,handelDecreaseProduct,handelCountCartItem,handelTotalCartItem,removeItem}}>
       {children}
     </storecontext.Provider>
   );

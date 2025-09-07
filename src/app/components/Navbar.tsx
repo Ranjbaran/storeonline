@@ -42,14 +42,18 @@ export default function Navbar() {
             </li>
 
           ))}
-          <Link href="/cart">
-            <li className="relative px-2 py-1 transition text-gray-600 hover:text-blue-600 rounded-lg">
-              🛒
-              <span className="absolute -top-1 -right-1 bg-red-400 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                {handelTotalCartItem()}
-              </span>
-            </li>
-          </Link>
+        
+
+<li className="relative px-2 py-1 text-gray-600 hover:text-blue-600 rounded-lg">
+  <Link href="/cart" className="flex items-center">
+    🛒
+    <span className="absolute -top-1 -right-1 bg-red-400 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+      {handelTotalCartItem()}
+    </span>
+  </Link>
+</li>
+
+
 
         </ul>
 

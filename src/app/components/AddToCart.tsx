@@ -7,7 +7,7 @@ type TItemCart = {
 }
 
 function AddToCart({ id }: TItemCart) {
-  const { CartItems, handelIncreaseProduct, handelDecreaseProduct,handelCountCartItem } = useStorecontext();
+  const { CartItems, handelIncreaseProduct, handelDecreaseProduct, handelCountCartItem, removeItem } = useStorecontext();
 
 
   return (
@@ -30,7 +30,11 @@ function AddToCart({ id }: TItemCart) {
         >
           -
         </button>
+        <button
+          onClick={() => removeItem(parseInt(id))}
+          type="button" className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl  dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">  حذف</button>
       </div>
+
     </>
   );
 }
