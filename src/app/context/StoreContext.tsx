@@ -1,5 +1,5 @@
 "use client";
-import React, { Children, useContext, useState } from "react";
+import React, { Children, useContext, useEffect, useState } from "react";
 import { createContext } from "react";
 import CartItem from "./../components/CartItem";
 import { count } from "console";
@@ -92,6 +92,7 @@ export function StoreContextProvider({ children }: TstorecontexProps) {
       return previous.filter(item=>item.id !=id);
     });
   }
+
 
   return (
     <storecontext.Provider value={{ CartItems ,handelIncreaseProduct,handelDecreaseProduct,handelCountCartItem,handelTotalCartItem,removeItem}}>
