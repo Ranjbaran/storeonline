@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "کفش ورزشی مردانه",
-      "price": "750,000 تومان",
+      "price": 750000,
       "image": "/images/products/shoes1.jpg",
       "description": "کفش ورزشی سبک و راحت مناسب برای دویدن و ورزش روزانه.",
       "category": "کفش",
@@ -12,7 +12,7 @@
     {
       "id": "2",
       "name": "کوله‌پشتی لپ‌تاپ",
-      "price": "1,200,000 تومان",
+      "price": 12000,
       "image": "/images/products/backpack.jpg",
       "description": "کوله‌پشتی ضد آب و مقاوم با فضای مخصوص لپ‌تاپ تا ۱۵ اینچ.",
       "category": "کیف و کوله",
@@ -21,7 +21,7 @@
     {
       "id": "3",
       "name": "ساعت هوشمند سری X",
-      "price": "3,500,000 تومان",
+      "price":350000,
       "image": "/images/products/smartwatch.jpg",
       "description": "ساعت هوشمند با قابلیت اندازه‌گیری ضربان قلب، GPS و پشتیبانی از نوتیفیکیشن‌ها.",
       "category": "گجت",
@@ -30,7 +30,7 @@
     {
       "id": "4",
       "name": "هدفون بی‌سیم",
-      "price": "2,100,000 تومان",
+      "price":20000,
       "image": "/images/products/headphone.jpg",
       "description": "هدفون بی‌سیم با کیفیت صدای HD و قابلیت حذف نویز.",
       "category": "لوازم جانبی",
@@ -39,7 +39,7 @@
     {
       "id": "5",
       "name": "کتاب برنامه‌نویسی جاوااسکریپت",
-      "price": "180,000 تومان",
+      "price":150000,
       "image": "/images/products/jsbook.jpg",
       "description": "کتاب جامع برای یادگیری اصولی جاوااسکریپت همراه با مثال‌های کاربردی.",
       "category": "کتاب",

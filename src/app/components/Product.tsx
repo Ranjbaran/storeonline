@@ -23,12 +23,12 @@ function Product(props: IProduct) {
 
       {/* اطلاعات محصول */}
       <div className="mt-3 flex flex-col flex-grow">
-        <h2 className="font-bold text-lg md:text-xl line-clamp-1">{props.name}</h2>
+        <h2 className="font-bold text-lg md:text-xl line-clamp-1 text-gray-700">{props.name}</h2>
         <p className="text-gray-600 text-sm md:text-base">{props.category}</p>
 
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-4">
           <span className="text-gray-800 font-medium">
-            قیمت: {props.price}
+            قیمت: {props.price} ریال
           </span>
 
           <button

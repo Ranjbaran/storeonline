@@ -11,51 +11,54 @@ type CartItemProps = {
   quantity: number;
 };
 type ProductType = {
-    id: number;
+  id: number;
   name: string;
   price: number;
   image: string;
   quantity: number;
 };
 export default function CartItem({ id, quantity }: CartItemProps) {
-  const { CartItems:products} = useStorecontext();
-const [product, setProduct] = useState<ProductType | null>(null);
+  const [product, setProduct] = useState<ProductType | null>(null);
   // پیدا کردن محصول از لیست محصولات
-    useEffect(() => {
-        axios.get(`https://fakestoreapi.com/products/${id}`)
-        .then(res => {
-          const{data}=res;
-          setProduct(data);
-          
-        })
-        .catch(err => {
-          console.error("Error fetching product data:", err);
-          return null;
-        });
-    }, [id]);     
+  useEffect(() => {
+    axios.get(`http://localhost:3005/products/${id}`)
+      .then(res => {
+        const { data } = res;
+        setProduct(data);
+      })
+      .catch(err => {
+        console.error("Error fetching product data:", err);
+        return null;
+      });
+  }, [id]);
 
-  const { handelIncreaseProduct:increaseQty,handelDecreaseProduct:decreaseQty,removeItem:removeFromCart} = useStorecontext();
-  if (!product) return null;
+  if (product === null) return null;
 
   return (
-    <div className="flex items-center justify-between border rounded-xl p-4 shadow-sm">
+
+    <div className="flex flex-col justify-between item-center  border rounded-xl p-4 shadow-sm">
       {/* تصویر محصول */}
-      <div className="flex items-center gap-4">
+      <div className="sm:flex flex-col items-center md:flex flex-row items-center gap-5  lg:flex flex-row items-center gap-3   ">
         <img
           src={product.image}
-          alt={product.name}
-          width={80}
-          height={80}
           className="rounded-lg object-cover"
         />
         <div>
+
+          <h2 className="text-lg font-semibold text-gray-800"> نام محصول:{product.name}</h2>
           <h2 className="text-lg font-semibold text-gray-800">{product.quantity}</h2>
-          <p className="text-gray-600">{product.price.toLocaleString()} تومان</p>
+          <p className="text-gray-600">{product?.price.toLocaleString()} ریال</p>
           <p className="text-sm text-gray-500">تعداد: {quantity}</p>
         </div>
-      </div>
-      <AddToCart id={product.id.toString()}/>
 
+
+      </div>
+      <div className="mr-10">
+        <AddToCart id={product.id.toString()} />
+
+      </div>
+    
     </div>
+
   );
 }
