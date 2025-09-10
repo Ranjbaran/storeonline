@@ -43,7 +43,7 @@ export default function Navbar() {
 
           ))}
         
-
+<Link className="text-gray-900" href="/aboutUs/office">office</Link>
 <li className="relative px-2 py-1 text-gray-600 hover:text-blue-600 rounded-lg">
   <Link href="/cart" className="flex items-center">
     🛒
