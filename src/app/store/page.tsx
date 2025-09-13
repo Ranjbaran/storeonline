@@ -2,7 +2,7 @@ import Product from "../components/Product";
 
 export interface IProduct {
   id: string;
-  name: string;
+  title: string;
   price: string;
   image: string;
   description: string;

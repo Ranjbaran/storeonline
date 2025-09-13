@@ -9,7 +9,7 @@ function Dashboard() {
         image: "",
         description: "",
         category: "",
-        tags: ""
+        tags: []
 
     })
     const handelChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -14,11 +14,12 @@ function Product(props: IProduct) {
     <div className="bg-[#EBF5FF] p-4 rounded-xl shadow-md flex flex-col hover:shadow-lg transition">
       {/* تصویر */}
       <div className="w-full h-48 sm:h-56 md:h-64 overflow-hidden rounded-lg">
-        <img
+        {/* <img
           className="w-full h-full object-cover"
           src={props.image}
           alt={props.name}
-        />
+        /> */}
+        {props.image && <img src={props.image} alt="description" />}
       </div>
 
       {/* اطلاعات محصول */}
