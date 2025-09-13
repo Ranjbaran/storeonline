@@ -12,6 +12,7 @@ export default function Navbar() {
     { href: "/store", label: "محصولات" },
     { href: "/aboutUs", label: "درباره ما" },
     { href: "/dashboard", label: "داشبورد" },
+    { href: "/login", label: "ورود" },
   ];
   const { handelTotalCartItem } = useStorecontext();
 
