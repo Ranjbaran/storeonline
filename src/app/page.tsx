@@ -1,11 +1,26 @@
 // app/page.tsx
 import Link from "next/link";
-
+import Image from "next/image";
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col justify-between">
       {/* Hero */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-24 px-6">
+          {/* <div className="relative w-full h-full">
+                  <Image
+      src="/images/products/backpack.jpg" // یا URL خارجی
+      className=" object-cover mb-6 rounded-lg shadow-lg"
+      fill
+      alt="توضیح تصویر"
+      priority // برای تصاویر مهم (بالای فولد)
+      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+      placeholder="blur" // استفاده از تصویر تار به عنوان پیش‌نمایش
+
+    />
+
+          </div> */}
+ 
+     
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
           به فروشگاه ما خوش آمدید
         </h1>
@@ -36,11 +51,22 @@ export default function HomePage() {
             <p className="text-gray-500 mt-2">همیشه در دسترس شما هستیم</p>
           </div>
         </div>
+ 
       </section>
 
       {/* فوتر */}
       <footer className="bg-gray-800 text-gray-300 py-6 text-center">
         <p>© {new Date().getFullYear()} فروشگاه آنلاین - تمامی حقوق محفوظ است.</p>
+                        <div className="relative w-full h-[500]">
+  <Image
+    src="/images/products/backpack.jpg"
+    fill={true}
+    alt="پس‌زمینه"
+  
+
+  />
+  {/* محتوای دیگه‌ت اینجا */}
+</div>
       </footer>
     </main>
   );
