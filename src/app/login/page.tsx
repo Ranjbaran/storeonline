@@ -5,7 +5,7 @@ import { error } from "console";
 import { redirect } from "next/navigation";
 
 import React, { useState } from "react";
-
+import Cookies from "js-cookie";
 const LoginForm: React.FC = () => {
   const [userName, setuserName] = useState("");
   const [password, setPassword] = useState("");
@@ -25,8 +25,8 @@ const LoginForm: React.FC = () => {
       token: "skdjfkdljgkldfgj",
       expire: 6,
     };
-    // Cookie.set("token",respose.token,{expire:respose.expire})
-    redirect("/dashboar")
+    Cookies.set("token", respose.token, { expires: respose.expire });
+    redirect("/dashboard")
   };
 
   return (
