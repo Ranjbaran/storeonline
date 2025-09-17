@@ -5,7 +5,8 @@ import Navbar from "./components/Navbar";
 import Container from "./components/container";
 import Layout from "./components/layout";
 import { StoreContextProvider } from "./context/StoreContext";
-
+import localfont from 'next/font/local';
+const myFont=localfont({src:'../../public/fonts//Yekan.woff'})
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,8 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body
+      {/* <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      > */}
+       <body
+        className={myFont.className}
       >
         <StoreContextProvider>
           <Layout>{children}</Layout>
